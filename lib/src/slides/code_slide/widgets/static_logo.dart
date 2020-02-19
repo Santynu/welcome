@@ -8,7 +8,7 @@ class StaticLogo extends StatelessWidget {
   const StaticLogo({Key key, this.width}) : super(key: key);
 
   const StaticLogo.small({Key key})
-      : width = 300,
+      : width = 500,
         super(key: key);
 
   @override
@@ -16,7 +16,7 @@ class StaticLogo extends StatelessWidget {
     return Hero(
         tag: 'logoLeft',
         child: Image.asset(
-          'assets/images/logo_madrid.png',
+          'assets/images/lifull_connect_logo.png',
           width: width,
         ));
   }

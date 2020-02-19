@@ -28,7 +28,7 @@ class CodeSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TwoSidesSlide(
-      leftChild: Padding(
+      /*leftChild: Padding(
         child: Stack(
           children: <Widget>[
             app,
@@ -42,7 +42,7 @@ class CodeSlide extends StatelessWidget {
         ),
         padding:
             state == CodeState.material ? EdgeInsets.zero : EdgeInsets.all(80),
-      ),
+      ),*/
       rightChild: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
@@ -105,7 +105,8 @@ class CodeSlide extends StatelessWidget {
         title: 'Welcome to Flutter Madrid',
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Flutter Madrid'),
+            title: Text('Lifull Connect Talks'),
+            backgroundColor: Color(0xffed6103),
           ),
         ),
       );
@@ -187,36 +188,38 @@ class CodeSlide extends StatelessWidget {
   String get code {
     if (state == CodeState.material)
       return '''MaterialApp(
-  title: 'Flutter Madrid',
-  appBar: AppBar(title: Text('Flutter Madrid')),
-  home: FlutterMadrid(''';
+          title: 'Lifull Connect Talks',
+          appBar: AppBar(
+            title: Text('Lifull Connect Talks'),
+            backgroundColor: Color(0xffed6103)),
+          home: LifullConnectTalks(''';
 
-    String flutterMadrid = '''MaterialApp(
-  title: 'Flutter Madrid',
-  home: FlutterMadrid(
-    logo: 'logo_madrid.png',''';
+    String lifullConnectTalks = '''MaterialApp(
+          title: 'Lifull Connect Talks',
+           home: LifullConnectTalks(
+           logo: 'lifull_connect_logo.png',''';
 
     if (state == CodeState.alberto)
-      flutterMadrid += '\n    organizers: [ Alberto() ],';
+      lifullConnectTalks += '\n    organizers: [ Alberto() ],';
 
     if (state.index >= CodeState.jaime.index)
-      flutterMadrid += '\n    organizers: [ Alberto(), Jaime() ],';
+      lifullConnectTalks += '\n    organizers: [ Alberto(), Jaime() ],';
     if (state.index >= CodeState.meetup.index)
-      flutterMadrid += 
+      lifullConnectTalks +=
           '\n    meetup: \'https://www.meetup.com/es-ES/Flutter-Madrid\',';
     if (state.index >= CodeState.web.index)
-      flutterMadrid += '\n    web: \'https://flutter.madrid\',';
+      lifullConnectTalks += '\n    web: \'https://flutter.madrid\',';
     if (state.index >= CodeState.twitter.index)
-      flutterMadrid += '\n    twitter: \'@FlutterMadrid\',';
+      lifullConnectTalks += '\n    twitter: \'@FlutterMadrid\',';
     if (state.index >= CodeState.telegram.index)
-      flutterMadrid += '\n    telegram: \'Flutter Madrid\',';
+      lifullConnectTalks += '\n    telegram: \'Flutter Madrid\',';
     if (state.index >= CodeState.gmail.index)
-      flutterMadrid += '\n    email: \'fluttermadrid@gmail.com\',';
+      lifullConnectTalks += '\n    email: \'fluttermadrid@gmail.com\',';
     if (state.index >= CodeState.github.index)
-      flutterMadrid += '\n    github: \'https://github.com/flutter-madrid/\',';
+      lifullConnectTalks += '\n    github: \'https://github.com/flutter-madrid/\',';
     if (state.index >= CodeState.members.index)
-      flutterMadrid += '\n    members: MeetupMembers.list,';
-    return flutterMadrid;
+      lifullConnectTalks += '\n    members: MeetupMembers.list,';
+    return lifullConnectTalks;
   }
 }
 

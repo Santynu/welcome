@@ -1,5 +1,5 @@
 name: welcome
-description: Keynote de bienvenida en el primer meetup de Flutter Madrid.
+description: Keynote de bienvenida en Lifull Connect Talks de Flutter.
 version: 1.0.0+1
 environment:
   sdk: ">=2.3.0 <3.0.0"
@@ -26,8 +26,8 @@ flutter:
   fonts:
     - family: GoogleSans
       fonts:
-        - asset: assets/fonts/ProductSans-Regular.ttf
-        - asset: assets/fonts/ProductSans-Bold.ttf
+        - asset: assets/fonts/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat-Bold.ttf
           weight: 700
-        - asset: assets/fonts/ProductSans-Italic.ttf
+        - asset: assets/fonts/Montserrat-Italic.ttf
           style: italic

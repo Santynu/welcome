@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
-import 'package:welcome/src/slides/code_slide/widgets/members.dart';
 import 'package:welcome/src/slides/code_slide/widgets/organizer.dart';
 import 'package:welcome/src/slides/code_slide/widgets/social_media.dart';
 import 'package:welcome/src/slides/code_slide/widgets/static_logo.dart';
-import 'package:welcome/src/slides/two_sides_slide.dart';
+import 'package:welcome/src/slides/sides_slide.dart';
 
 enum CodeState {
   material,
   logo,
-  alberto,
-  jaime,
+  santi,
   meetup,
   web,
   twitter,
@@ -28,7 +26,7 @@ class CodeSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TwoSidesSlide(
-      /*leftChild: Padding(
+      leftChild: Padding(
         child: Stack(
           children: <Widget>[
             app,
@@ -42,7 +40,7 @@ class CodeSlide extends StatelessWidget {
         ),
         padding:
             state == CodeState.material ? EdgeInsets.zero : EdgeInsets.all(80),
-      ),*/
+      ),
       rightChild: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
@@ -80,10 +78,8 @@ class CodeSlide extends StatelessWidget {
       case CodeState.logo:
       case CodeState.members:
         return Container();
-      case CodeState.alberto:
-        return Organizer(data: Organizers.alberto);
-      case CodeState.jaime:
-        return Organizer(data: Organizers.jaime);
+      case CodeState.santi:
+        return Organizer(data: Organizers.santi);
       case CodeState.meetup:
         return SocialMediaTile(SocialMedia.meetup);
       case CodeState.web:
@@ -114,27 +110,14 @@ class CodeSlide extends StatelessWidget {
     else if (state == CodeState.logo)
       return Center(child: StaticLogo(width: 450));
 
-    else if (state == CodeState.alberto)
+    else if (state == CodeState.santi)
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           StaticLogo.small(),
         ],
       );
-      
-    else if (state == CodeState.jaime)
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          StaticLogo.small(),
-          SizedBox(height: 40),
-          Row(
-            children: <Widget>[
-              OrganizerAvatar(data: Organizers.alberto, radius: 40),
-            ],
-          ),
-        ],
-      );
+
     else {
       List<Widget> socialMedia = [];
 
@@ -163,14 +146,23 @@ class CodeSlide extends StatelessWidget {
           SizedBox(height: 40),
           Row(
             children: <Widget>[
-              OrganizerAvatar(data: Organizers.alberto, radius: 40),
+              OrganizerAvatar(data: Organizers.santi, radius: 40),
               SizedBox(width: 20),
-              OrganizerAvatar(data: Organizers.jaime, radius: 40),
             ],
           ),
           SizedBox(height: 16),
           if (state == CodeState.members)
-            Expanded(child: Members())
+            Expanded(
+              child: Align(
+                  alignment: Alignment.center,
+                  child: RichText(
+                    text: TextSpan(
+                      text: '¡Vamos al lio!',
+                      style: TextStyle(fontSize: 80, fontWeight: FontWeight.w600, color: Colors.black87),
+                    ),
+                  ),
+              )
+            )
           else
             Spacer(),
           Row(
@@ -199,11 +191,8 @@ class CodeSlide extends StatelessWidget {
            home: LifullConnectTalks(
            logo: 'lifull_connect_logo.png',''';
 
-    if (state == CodeState.alberto)
-      lifullConnectTalks += '\n    organizers: [ Alberto() ],';
-
-    if (state.index >= CodeState.jaime.index)
-      lifullConnectTalks += '\n    organizers: [ Alberto(), Jaime() ],';
+    if (state == CodeState.santi)
+      lifullConnectTalks += '\n    organizers: [ Santi() ],';
     if (state.index >= CodeState.meetup.index)
       lifullConnectTalks +=
           '\n    meetup: \'https://www.meetup.com/es-ES/Flutter-Madrid\',';
@@ -218,7 +207,7 @@ class CodeSlide extends StatelessWidget {
     if (state.index >= CodeState.github.index)
       lifullConnectTalks += '\n    github: \'https://github.com/flutter-madrid/\',';
     if (state.index >= CodeState.members.index)
-      lifullConnectTalks += '\n    members: MeetupMembers.list,';
+      lifullConnectTalks += '\n    text: \'¡Vamos al lio!\',';
     return lifullConnectTalks;
   }
 }

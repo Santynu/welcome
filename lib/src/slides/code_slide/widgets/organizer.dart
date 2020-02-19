@@ -17,31 +17,17 @@ class OrganizerData {
 }
 
 class Organizers {
-  static OrganizerData alberto = OrganizerData(
-      id: 'alberto',
-      name: 'Alberto Chamorro',
-      imageAssetsUrl: 'assets/images/alberto.png',
-      jobDescription: 'Front-end Specialist, Accenture',
+  static OrganizerData santi = OrganizerData(
+      id: 'santi',
+      name: 'Santiago Núñez',
+      imageAssetsUrl: 'assets/images/santi.jpg',
+      jobDescription: 'Back-end developer, Lifull Connect',
       socialMedia:
       {
-        SocialMedia.twitter: '@achamorro_',
-        SocialMedia.google: 'a.chamorro.ruiz@gmail.com',
-        SocialMedia.linkedin: 'https://www.linkedin.com/in/alberto-chamorro/',
-        SocialMedia.github: 'https://github.com/ach4m0/'
-      }
-  );
-
-  static OrganizerData jaime = OrganizerData(
-      id: 'jaime',
-      name: 'Jaime Blasco',
-      imageAssetsUrl: 'assets/images/jaime.jpg',
-      jobDescription: 'Software Engineer, Mox Health',
-      socialMedia:
-      {
-        SocialMedia.twitter: '@JamesBlasco',
-        SocialMedia.google: 'hi@jaimeblasco.com',
-        SocialMedia.linkedin: 'https://www.linkedin.com/in/jaimeblascoandres/',
-        SocialMedia.github: 'https://github.com/jamesblasco/'
+        SocialMedia.twitter: '@santynu',
+        SocialMedia.google: 'santiago.nunez@lifullconnect.com',
+        SocialMedia.linkedin: 'https://www.linkedin.com/in/santiago-núñez-márquez-55640b10b/',
+        SocialMedia.github: 'https://github.com/Santynu'
       }
   );
 }

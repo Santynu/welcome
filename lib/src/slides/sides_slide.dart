@@ -20,7 +20,7 @@ class SlideOnTheRight extends StatelessWidget {
                           color: Color(0xffed6103)
                       ),
                       Padding(
-                        padding: EdgeInsets.fromLTRB(20, 40, 40, 0),
+                        padding: EdgeInsets.fromLTRB(20, 40, 180, 0),
                         child: Image.asset('assets/images/lifull_connect_logo_negative.png'),
                       )
                     ],

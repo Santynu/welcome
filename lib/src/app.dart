@@ -3,14 +3,15 @@ import 'package:flutter_keynote/flutter_keynote.dart';
 import 'package:welcome/src/slides/code_slide/code_slide.dart';
 
 import 'package:welcome/src/slides/made_with_flutter_slide.dart';
+import 'package:welcome/src/slides/waiting_slide.dart';
 import 'package:welcome/src/slides/welcome_slide.dart';
 
 const List<Widget> slides = [
+  WaitingSlide(state: WaitingState.first),
+  WaitingSlide(state: WaitingState.second),
   WelcomeSlide(state: WelcomeState.first),
   WelcomeSlide(state: WelcomeState.second),
   WelcomeSlide(state: WelcomeState.third),
-  WelcomeSlide(state: WelcomeState.fourth),
-  WelcomeSlide(state: WelcomeState.fiveth),
   CodeSlide(state: CodeState.material),
   CodeSlide(state: CodeState.logo),
   CodeSlide(state: CodeState.santi),
@@ -28,7 +29,7 @@ class WelcomeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KeynoteApp(
-      title: 'Welcome to Lifull Talks! Today supportes by Flutter Madrid',
+      title: 'Welcome to Lifull Talks! Flutter',
       theme: ThemeData(
         textTheme: TextTheme(
           display1: TextStyle(

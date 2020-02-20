@@ -98,7 +98,7 @@ class CodeSlide extends StatelessWidget {
   Widget get app {
     if (state == CodeState.material)
       return MaterialApp(
-        title: 'Welcome to Flutter Madrid',
+        title: 'Welcome to Lifull Talks! Flutter',
         home: Scaffold(
           appBar: AppBar(
             title: Text('Lifull Connect Talks'),
